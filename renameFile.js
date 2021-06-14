@@ -1,7 +1,18 @@
-// this is a comment :)
-// this is a change
+const readline = require("readline");
 
-const firstName = "Carter";
-const lastName = "Walsh";
+const reader = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
 
-console.log(`${firstName} ${lastName}`);
+reader.question("What is your name?", function(answer) {
+    console.log(`Hi, ${answer}!`);
+});
+
+reader.question("Enter a number to check if it is even or odd ", function(number) {
+    if (number % 2 === 0) {
+        console.log(`The number ${number} is even`);
+    } else {
+        console.log(`The number ${number} is odd`);
+    }
+});
